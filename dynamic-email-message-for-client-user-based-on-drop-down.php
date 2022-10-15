@@ -17,11 +17,11 @@ function hsc_cf7_submit_update_email($cf){
       
       //Put drop down Filed Name  eg. [select SelectGender "Male" "Female" ]   
       
-      $regarding = isset( $_POST['SelectGender'] ) ? trim( $_POST['SelectGender'] ) : '';  //here
+      $checkGender = isset( $_POST['SelectGender'] ) ? trim( $_POST['SelectGender'] ) : '';  //here
 
         $mail = $wpcf7->prop('mail_2');
         $mailBody = $mail['body'];
-        if($regarding === 'Male'){
+        if($checkGender === 'Male'){
             $mail['body'] = $option1body;
             $wpcf7->set_properties( array("mail_2" => $mail)) ;
         }
