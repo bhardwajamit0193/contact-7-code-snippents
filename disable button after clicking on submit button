@@ -1,0 +1,24 @@
+# Add In function.php
+
+add_action('wp_footer', 'mycustom_wp_footer');
+function mycustom_wp_footer()
+{
+?>
+    <script type="text/javascript">
+        jQuery('.wpcf7-form').submit(function() {
+           
+            jQuery(this).find(':input[type=submit]').prop('disabled', true);
+            var wpcf7Elm = document.querySelector('.wpcf7');
+            wpcf7Elm.addEventListener('wpcf7submit', function(event) {
+                jQuery('.wpcf7-submit').prop("disabled", false);
+            }, false);
+            wpcf7Elm.addEventListener('wpcf7invalid', function() {
+                jQuery('.wpcf7-submit').prop("disabled", false);
+            }, false);
+        });
+        jQuery('.wpcf7-submit').on('click',function(){
+    jQuery(this).val("Sending, please wait..");
+});
+    </script>
+<?php
+}?>
