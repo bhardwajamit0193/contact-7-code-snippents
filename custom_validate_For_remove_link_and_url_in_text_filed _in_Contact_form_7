@@ -1,6 +1,5 @@
 //form validate
 
-
 add_filter('wpcf7_validate_textarea', 'custom_text_validation_filter', 20, 2);
 
 function custom_text_validation_filter($result, $tag) {
