@@ -14,7 +14,7 @@ Hi,  There is very useful snippents for contact form 7
 4. <a href="https://github.com/bhardwajamit0193/contact-7-code-snippents/blob/main/disable%20button%20after%20clicking%20on%20submit%20button">disable button after clicking on submit button</a>
 
 
-5. <a href="https://github.com/bhardwajamit0193/contact-7-code-snippents/blob/main/custom_validate_For_remove_link_and_url_in_text_filed%20_in_Contact_form_7">Custom Validate for remove links and URL in text and textarea fiel si Conatct form 7</a>
+5. <a href="https://github.com/bhardwajamit0193/contact-7-code-snippents/blob/main/custom_validate_For_remove_link_and_url_in_text_filed%20_in_Contact_form_7">Custom Validate for remove links and URL in text and textarea field in Conatct form 7</a>
 
 
 
