@@ -1,0 +1,49 @@
+//form validate
+
+add_filter('wpcf7_validate_textarea', 'custom_text_validation_filter', 20, 2);
+
+function custom_text_validation_filter($result, $tag) {
+    $name = $tag['name'];
+    $value = isset($_POST[$name]) ? trim($_POST[$name]) : '';
+    if (preg_match('/https?:\/\//', $value)) {
+        $result->invalidate($tag, 'Please remove any links from this field.');
+    }
+    return $result;
+}
+
+
+
+
+add_filter('wpcf7_validate_textarea', 'english_only_validation_filter',20, 2);
+function english_only_validation_filter($result, $tag) {
+    $name = $tag['name'];
+    $value = isset($_POST[$name]) ? trim($_POST[$name]) : '';
+    if (!preg_match('/^[A-Za-z\s]+$/', $value)) {
+        $result->invalidate($tag, 'Please use only English characters.');
+    }
+    return $result;
+}
+
+
+
+
+add_filter('wpcf7_validate_text*', 'custom_text_validation_filter_2', 20, 2);
+function custom_text_validation_filter_2($result, $tag) {
+  $name = $tag->name;
+  $value = $_POST[$name];
+  if (preg_match('/(http|https):\/\/[^\s]+/', $value)) {
+    $result->invalidate($tag, "Please remove any links from this field");
+  }
+  return $result;
+}
+
+
+add_filter('wpcf7_validate_text*', 'english_only_validation_filter_2', 10, 2);
+function english_only_validation_filter_2($result, $tag) {
+  $name = $tag->name;
+  $value = $_POST[$name];
+  if (!preg_match('/^[a-zA-Z\s]+$/', $value)) {
+    $result->invalidate($tag, "Please use only English characters and remove links");
+  }
+  return $result;
+}
